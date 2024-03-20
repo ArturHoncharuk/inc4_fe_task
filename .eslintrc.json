@@ -29,7 +29,7 @@
   "overrides": [
     {
       "rules": {
-        "import/extensions": ["never"],
+        "import/extensions": ["error", "never"],
         "import/prefer-default-export": "off",
         "react/function-component-definition": [
           "error",

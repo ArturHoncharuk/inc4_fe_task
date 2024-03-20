@@ -1,10 +1,9 @@
-import { Text } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native';
+
+import { styles } from './base-layout.styles';
+
+// import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const BaseLayout = () => {
-  return (
-    <SafeAreaView>
-      <Text>Hello world</Text>
-    </SafeAreaView>
-  );
+  return <SafeAreaView style={styles.wrapper} />;
 };
