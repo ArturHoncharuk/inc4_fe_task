@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "inc4-frontend",
+    "name": "HashWatcher",
     "slug": "inc4-frontend",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -23,6 +23,7 @@
     },
     "web": {
       "favicon": "./src/shared/assets/images/app/favicon.png"
-    }
+    },
+    "plugins": ["expo-font"]
   }
 }
