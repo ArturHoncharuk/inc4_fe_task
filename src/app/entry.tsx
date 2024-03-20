@@ -1,28 +1,19 @@
 import { registerRootComponent } from 'expo';
-import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { useCallback, useEffect } from 'react';
-import { View } from 'react-native';
+import { useEffect } from 'react';
+import { StyleProp, View, ViewStyle } from 'react-native';
 
+import { useAsyncSplash } from '@/shared/lib/hooks';
 import { BaseLayout } from '@/shared/ui/layouts/base-layout';
 
 SplashScreen.preventAutoHideAsync();
 
-export default function Entry() {
-  const [fontsLoaded, fontError] = useFonts({
-    // eslint-disable-next-line global-require, import/extensions
-    MontserratRegular: require('@/shared/assets/fonts/Montserrat-Regular.ttf'),
-    // eslint-disable-next-line global-require, import/extensions
-    MontserratMedium: require('@/shared/assets/fonts/Montserrat-Medium.ttf'),
-    // eslint-disable-next-line global-require, import/extensions
-    MontserratBold: require('@/shared/assets/fonts/Montserrat-Bold.ttf'),
-  });
+const wrapperStyle: StyleProp<ViewStyle> = {
+  flex: 1,
+};
 
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded || fontError) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded, fontError]);
+export default function Entry() {
+  const { fontsLoaded, fontError, onLayoutRootView } = useAsyncSplash();
 
   useEffect(() => {
     if (fontsLoaded || fontError) {
@@ -35,7 +26,7 @@ export default function Entry() {
   }
 
   return (
-    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+    <View style={wrapperStyle} onLayout={onLayoutRootView}>
       <BaseLayout />
     </View>
   );
