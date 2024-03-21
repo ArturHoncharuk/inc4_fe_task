@@ -12,9 +12,9 @@ import { TransactionPrimaryCard } from '@/shared/ui/transaction-primary-card';
 const ITEM_HEIGHT = 70;
 
 export const TransactionsListWithPagination = () => {
+  const { transactions } = useAppSelector((state) => state.transactions);
   const { fetching, fetchingNextPage, nextPageTransactions } =
     useFetchTransactions();
-  const { transactions } = useAppSelector((state) => state.transactions);
 
   const renderTransactionCard = useCallback(
     ({ item }: { item: ITransaction }) => (
