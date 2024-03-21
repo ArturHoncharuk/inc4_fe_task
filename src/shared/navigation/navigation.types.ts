@@ -5,7 +5,8 @@ export type RootNavigationParamsType = {
 
   // Navigation Stacks
   ListsStack: undefined;
-  TransactionDetailsScreen: { blockHash: string };
+  TransactionsScreen: undefined;
+  TransactionDetailsScreen: { hashId: string };
   StatusScreen: undefined;
 };
 

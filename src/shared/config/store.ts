@@ -1,11 +1,15 @@
+/* eslint-disable import/extensions */
 import { configureStore } from '@reduxjs/toolkit';
 
-// eslint-disable-next-line import/extensions
-import { transactionsReducer } from '@/entities/transactions/model/transactions.model';
+import { statusReducer } from '@/entities/status/model';
+import { transactionDetailsReducer } from '@/entities/transaction-details/model';
+import { transactionsReducer } from '@/entities/transactions/model';
 
 export const store = configureStore({
   reducer: {
     transactions: transactionsReducer,
+    transactionDetails: transactionDetailsReducer,
+    status: statusReducer,
   },
 });
 

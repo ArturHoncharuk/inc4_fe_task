@@ -8,12 +8,20 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: 70,
+    height: 90,
     borderBottomWidth: 1,
     borderBottomColor: COLORS.gray,
   },
   hash: {
+    fontSize: 14,
     maxWidth: '85%',
     color: 'white',
+  },
+  inner: {
+    flexDirection: 'column',
+  },
+  status: {
+    fontSize: 14,
+    marginTop: 10,
   },
 });
