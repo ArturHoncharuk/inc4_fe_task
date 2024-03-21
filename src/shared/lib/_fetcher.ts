@@ -10,7 +10,7 @@ interface FetchParams {
   readonly signal?: AbortSignal;
 }
 
-export async function $fetcher({
+export async function fetcher({
   path,
   signal,
   method = 'GET',

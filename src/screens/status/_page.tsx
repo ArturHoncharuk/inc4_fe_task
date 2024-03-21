@@ -1,9 +1,9 @@
-import { styles } from './lists.styles';
+import { styles } from './status.styles';
 
 import { BaseLayout } from '@/shared/ui/layouts/base-layout';
 import { Typography } from '@/shared/ui/typography';
 
-export function ListsScreen() {
+export function StatusScreen() {
   return (
     <BaseLayout>
       <Typography
@@ -11,7 +11,7 @@ export function ListsScreen() {
         extraStyles={styles.heading}
         variant="BOLD"
       >
-        Transactions
+        Status
       </Typography>
     </BaseLayout>
   );
