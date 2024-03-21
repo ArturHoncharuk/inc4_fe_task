@@ -4,9 +4,9 @@ import {
 } from '@react-navigation/bottom-tabs';
 
 import { RootNavigationParamsType } from './navigation.types';
+import { TransactionStackNavigation } from './transactions-stack.navigation';
 import { BottomNavigationLayout } from '../ui/navigation';
 
-import { ListsScreen } from '@/screens/lists';
 import { StatusScreen } from '@/screens/status';
 
 const BottomStack = createBottomTabNavigator<RootNavigationParamsType>();
@@ -18,10 +18,14 @@ const RootBottomNavigationOptions: BottomTabNavigationOptions = {
 export function RootBottomNavigation() {
   return (
     <BottomStack.Navigator
+      initialRouteName="ListsStack"
       tabBar={BottomNavigationLayout}
       screenOptions={RootBottomNavigationOptions}
     >
-      <BottomStack.Screen name="ListsStack" component={ListsScreen} />
+      <BottomStack.Screen
+        name="ListsStack"
+        component={TransactionStackNavigation}
+      />
       <BottomStack.Screen name="StatusScreen" component={StatusScreen} />
     </BottomStack.Navigator>
   );
