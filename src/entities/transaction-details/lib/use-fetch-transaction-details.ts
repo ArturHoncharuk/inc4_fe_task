@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
 import { transactionDetailsApi } from '../api';
+
 import {
   setTransactionDetails,
   toggleFetching,
-} from '../model/transaction-details.model';
-
+} from '@/entities/transaction-details/model';
 import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/use-redux';
 import { notifications } from '@/shared/lib/notifications';
 
