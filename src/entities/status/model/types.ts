@@ -43,4 +43,5 @@ export interface IStatus {
 
 export interface InitialStatusState {
   status: IStatus | null;
+  fetching: boolean;
 }
