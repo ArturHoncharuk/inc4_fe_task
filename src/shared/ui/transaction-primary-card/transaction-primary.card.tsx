@@ -7,6 +7,8 @@ import { styles } from './transaction-primary.card.styles';
 import { Typography } from '../typography';
 
 import type { ITransaction } from '@/entities/transactions/model/types';
+// eslint-disable-next-line import/extensions
+import { transactionStatusColor } from '@/shared/lib/status.color';
 import { RootNavigationParamsType } from '@/shared/navigation';
 
 interface ITransactionPrimaryCard {
@@ -17,23 +19,36 @@ export const TransactionPrimaryCard = memo(
   ({ transaction }: ITransactionPrimaryCard) => {
     const navigation: NavigationProp<RootNavigationParamsType> =
       useNavigation();
+
     const onTransactionPress = (): void => {
-      const { blockHash } = transaction;
+      const { hash } = transaction;
       navigation.navigate('TransactionDetailsScreen', {
-        blockHash,
+        hashId: hash,
       });
     };
 
     return (
       <TouchableWithoutFeedback onPress={onTransactionPress}>
         <View style={styles.container}>
-          <Typography
-            numberOfLines={3}
-            extraStyles={styles.hash}
-            variant="MEDIUM"
-          >
-            {transaction?.hash}
-          </Typography>
+          <View style={styles.inner}>
+            <Typography
+              numberOfLines={2}
+              extraStyles={styles.hash}
+              variant="MEDIUM"
+            >
+              {transaction?.hash}
+            </Typography>
+            <Typography
+              numberOfLines={1}
+              extraStyles={{
+                ...styles.status,
+                color: transactionStatusColor(transaction.status),
+              }}
+              variant="BOLD"
+            >
+              {transaction?.status}
+            </Typography>
+          </View>
 
           <Pressable>
             <MaterialIcons
@@ -47,5 +62,5 @@ export const TransactionPrimaryCard = memo(
     );
   },
   (prevProps, nextProps) =>
-    prevProps.transaction.blockHash === nextProps.transaction.blockHash
+    prevProps.transaction.hash === nextProps.transaction.hash
 );

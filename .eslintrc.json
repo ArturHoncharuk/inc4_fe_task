@@ -45,7 +45,6 @@
       "rules": {
         "no-param-reassign": "off",
         "import/no-extraneous-dependencies": "off",
-
         "import/extensions": ["error", "never"],
         "import/prefer-default-export": "off",
         "react/function-component-definition": [
