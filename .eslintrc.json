@@ -10,6 +10,7 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "no-unused-vars": "off",
+    "react/no-unused-prop-types": "off",
     "jsx-quotes": ["error", "prefer-double"],
     "react/jsx-filename-extension": [
       1,
@@ -42,6 +43,9 @@
   "overrides": [
     {
       "rules": {
+        "no-param-reassign": "off",
+        "import/no-extraneous-dependencies": "off",
+
         "import/extensions": ["error", "never"],
         "import/prefer-default-export": "off",
         "react/function-component-definition": [
