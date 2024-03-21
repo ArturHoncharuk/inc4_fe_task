@@ -1,6 +1,6 @@
 import React from 'react';
 import { styles } from './bottom-navigation.styles';
-import { BOTTOM_NAVIGATION_ROUTES } from '@/shared/config/routes';
+import { BOTTOM_NAVIGATION_ROUTES } from '@/shared/config/constants/routes';
 import { bottomIconResolver } from '@/shared/lib/navigation-icon.resolver';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { TouchableOpacity, View } from 'react-native';

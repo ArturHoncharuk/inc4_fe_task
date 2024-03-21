@@ -1,6 +1,7 @@
-import { FONT_FAMILY, FontKeysType } from '@/shared/config/fonts';
 import { ReactNode } from 'react';
 import { StyleProp, Text, TextProps, TextStyle } from 'react-native';
+
+import { FONT_FAMILY, FontKeysType } from '@/shared/config/constants/fonts';
 
 type ExtendedTextStyle = TextStyle & { extraStyles?: StyleProp<TextStyle> };
 

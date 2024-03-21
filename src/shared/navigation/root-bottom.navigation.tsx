@@ -1,12 +1,13 @@
-import { Text } from 'react-native';
 import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
 
 import { RootNavigationParamsType } from './navigation.types';
-import { ListsScreen } from '@/screens/lists';
 import { BottomNavigationLayout } from '../ui/navigation';
+
+import { ListsScreen } from '@/screens/lists';
+import { StatusScreen } from '@/screens/status';
 
 const BottomStack = createBottomTabNavigator<RootNavigationParamsType>();
 
@@ -21,7 +22,7 @@ export function RootBottomNavigation() {
       screenOptions={RootBottomNavigationOptions}
     >
       <BottomStack.Screen name="ListsStack" component={ListsScreen} />
-      <BottomStack.Screen name="StatusScreen" component={ListsScreen} />
+      <BottomStack.Screen name="StatusScreen" component={StatusScreen} />
     </BottomStack.Navigator>
   );
 }

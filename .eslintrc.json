@@ -10,10 +10,24 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "no-unused-vars": "off",
+    "react/no-unused-prop-types": "off",
     "jsx-quotes": ["error", "prefer-double"],
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", ".tsx"] }
+    ],
+    "react/require-default-props": "off",
+    "class-methods-use-this": "off",
+    "@typescript-eslint/no-useless-constructor": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "html": "enforce",
+        "custom": "enforce",
+        "explicitSpread": "enforce",
+        "exceptions": ["Text"]
+      }
     ],
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
@@ -29,6 +43,9 @@
   "overrides": [
     {
       "rules": {
+        "no-param-reassign": "off",
+        "import/no-extraneous-dependencies": "off",
+
         "import/extensions": ["error", "never"],
         "import/prefer-default-export": "off",
         "react/function-component-definition": [
