@@ -1,3 +1,3 @@
-import { transactions } from "./transactions.api";
+import { transactionsApi } from './transactions.api';
 
-export {transactions}
+export { transactionsApi };

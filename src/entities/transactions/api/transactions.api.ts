@@ -20,4 +20,4 @@ class TransactionsApi {
   }
 }
 
-export const transactions = new TransactionsApi();
+export const transactionsApi = new TransactionsApi();

@@ -1,3 +1,7 @@
+export interface InitialTransactionState {
+  transactions: ITransaction[];
+}
+
 export interface ITransaction {
   blockHash: string;
   blockNumber: number;
