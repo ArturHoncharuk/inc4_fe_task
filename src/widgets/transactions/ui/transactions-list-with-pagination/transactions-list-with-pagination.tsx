@@ -8,12 +8,11 @@ import { useFetchTransactions } from '@/entities/transactions/lib/use-fetch-tran
 import { ITransaction } from '@/entities/transactions/model/types';
 import { useAppSelector } from '@/shared/lib/hooks/use-redux';
 import { TransactionPrimaryCard } from '@/shared/ui/transaction-primary-card';
-import { Typography } from '@/shared/ui/typography';
 
 const ITEM_HEIGHT = 70;
 
 export const TransactionsListWithPagination = () => {
-  const { fetching, fetchingNextPage, nextPageTransactions, currentPage } =
+  const { fetching, fetchingNextPage, nextPageTransactions } =
     useFetchTransactions();
   const { transactions } = useAppSelector((state) => state.transactions);
 
@@ -37,22 +36,17 @@ export const TransactionsListWithPagination = () => {
   }
 
   return (
-    <>
-      <Typography>
-        {currentPage} | {transactions.length}
-      </Typography>
-      <FlashList
-        contentContainerStyle={styles.contentContainerStyle}
-        data={transactions}
-        keyExtractor={(item) => item.hash}
-        estimatedItemSize={ITEM_HEIGHT}
-        ListFooterComponent={ListFooterComponent}
-        removeClippedSubviews
-        indicatorStyle="white"
-        onEndReachedThreshold={0.00016}
-        onEndReached={nextPageTransactions}
-        renderItem={renderTransactionCard}
-      />
-    </>
+    <FlashList
+      contentContainerStyle={styles.contentContainerStyle}
+      data={transactions}
+      keyExtractor={(item) => item.hash}
+      estimatedItemSize={ITEM_HEIGHT}
+      ListFooterComponent={ListFooterComponent}
+      removeClippedSubviews
+      indicatorStyle="white"
+      onEndReachedThreshold={0.00016}
+      onEndReached={nextPageTransactions}
+      renderItem={renderTransactionCard}
+    />
   );
 };
