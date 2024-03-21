@@ -10,8 +10,8 @@ import { TypedNativeStackScreenProps } from '@/shared/navigation';
 import { BaseLayout } from '@/shared/ui/layouts/base-layout';
 import { Loader } from '@/shared/ui/loader';
 import { Typography } from '@/shared/ui/typography';
-import { TransactionPrimaryInformation } from '@/widgets/transaction-details/components/primary-information';
-import { TransactionSecondaryInformation } from '@/widgets/transaction-details/components/secondary-information';
+import { TransactionPrimaryInformation } from '@/widgets/transaction-details/ui/primary-information';
+import { TransactionSecondaryInformation } from '@/widgets/transaction-details/ui/secondary-information';
 
 type TransactionDetailsScreenProps =
   TypedNativeStackScreenProps<'TransactionDetailsScreen'>;

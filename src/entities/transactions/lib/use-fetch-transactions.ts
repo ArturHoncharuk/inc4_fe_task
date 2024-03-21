@@ -6,8 +6,11 @@ import {
   appendNextPageTransactions,
   setInitialTransactions,
 } from '@/entities/transactions/model';
-import { useEffectOnce } from '@/shared/lib/hooks';
-import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/use-redux';
+import {
+  useAppDispatch,
+  useAppSelector,
+  useEffectOnce,
+} from '@/shared/lib/hooks';
 import { notifications } from '@/shared/lib/notifications';
 
 export function useFetchTransactions() {

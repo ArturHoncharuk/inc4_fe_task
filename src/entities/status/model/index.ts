@@ -1,4 +1,4 @@
-import { setStatus, statusReducer } from './status.model';
+import { setStatus, toggleFetching, statusReducer } from './status.model';
 import * as StatusTypes from './types';
 
-export { StatusTypes, setStatus, statusReducer };
+export { StatusTypes, setStatus, toggleFetching, statusReducer };

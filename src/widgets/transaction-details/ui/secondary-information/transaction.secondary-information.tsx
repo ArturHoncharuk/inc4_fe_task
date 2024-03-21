@@ -1,11 +1,10 @@
 import { MaterialIcons } from '@expo/vector-icons';
-import moment from 'moment';
 import { useState } from 'react';
 import { View } from 'react-native';
 
 import { styles } from './styles';
 
-import { DATE_FORMAT } from '@/shared/config/constants/constants';
+import { $date } from '@/shared/lib/date';
 import { useAppSelector } from '@/shared/lib/hooks/use-redux';
 import { Typography } from '@/shared/ui/typography';
 
@@ -22,7 +21,7 @@ export const TransactionSecondaryInformation = () => {
     { icon: 'gas-meter', value: transaction?.gasUsed ?? 'undefined' },
     {
       icon: 'watch',
-      value: moment(transaction?.timestamp).format(DATE_FORMAT) ?? 'undefined',
+      value: $date(transaction?.timestamp) ?? 'undefined',
     },
     { icon: 'adjust', value: transaction?.type ?? 'undefined' },
     { icon: '123', value: transaction?.nonce ?? 'undefined' },

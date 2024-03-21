@@ -1,4 +1,5 @@
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
+
 import { COLORS } from '../config';
 
 interface IBottomIconResolverParams {
@@ -28,6 +29,9 @@ export const bottomIconResolver = ({
           color={checked ? 'white' : COLORS.gray}
         />
       );
+    }
+    default: {
+      return null;
     }
   }
 };
