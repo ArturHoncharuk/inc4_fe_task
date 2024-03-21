@@ -6,7 +6,7 @@ import {
   setTransactionDetails,
   toggleFetching,
 } from '@/entities/transaction-details/model';
-import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/use-redux';
+import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
 import { notifications } from '@/shared/lib/notifications';
 
 export function useFetchTransactionDetailsById(hashId: string) {

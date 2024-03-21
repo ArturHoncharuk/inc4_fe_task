@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { statusApi } from '../api';
 import { setStatus, toggleFetching } from '../model';
 
-import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks/use-redux';
+import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
 
 export function useFetchStatus() {
   const dispatch = useAppDispatch();
