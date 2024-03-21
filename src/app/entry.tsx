@@ -1,12 +1,34 @@
 import { registerRootComponent } from 'expo';
-import SplashScreen from 'expo-splash-screen';
+import * as SplashScreen from 'expo-splash-screen';
+import { StatusBar } from 'expo-status-bar';
+import { useEffect } from 'react';
 
-import { BaseLayout } from '@/shared/ui/layouts/base-layout';
+import { WithProviders } from './providers/withProviders';
+
+import { useAsyncSplash } from '@/shared/lib/hooks';
+import { RootBottomNavigation } from '@/shared/navigation';
 
 SplashScreen.preventAutoHideAsync();
 
-export default function Entry() {
-  return <BaseLayout />;
+export function Entry() {
+  const { fontsLoaded, fontError, onLayoutRootView } = useAsyncSplash();
+
+  useEffect(() => {
+    if (fontsLoaded || fontError) {
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+
+  return (
+    <WithProviders onLayoutRootView={onLayoutRootView}>
+      <StatusBar style="light" />
+      <RootBottomNavigation />
+    </WithProviders>
+  );
 }
 
 registerRootComponent(Entry);
