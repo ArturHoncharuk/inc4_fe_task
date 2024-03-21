@@ -5,6 +5,8 @@ import { StyleProp, View, ViewStyle } from 'react-native';
 
 import { useAsyncSplash } from '@/shared/lib/hooks';
 import { BaseLayout } from '@/shared/ui/layouts/base-layout';
+import { RootBottomNavigation } from '@/shared/navigation';
+import { NavigationContainer } from '@react-navigation/native';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -27,7 +29,9 @@ export default function Entry() {
 
   return (
     <View style={wrapperStyle} onLayout={onLayoutRootView}>
-      <BaseLayout />
+      <NavigationContainer>
+        <RootBottomNavigation />
+      </NavigationContainer>
     </View>
   );
 }

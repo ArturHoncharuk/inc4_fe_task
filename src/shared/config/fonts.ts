@@ -1,4 +1,4 @@
-type FontKeysType = 'NORMAL' | 'MEDIUM' | 'BOLD';
+export type FontKeysType = 'NORMAL' | 'MEDIUM' | 'BOLD';
 
 type OFontFamilyType = Record<FontKeysType, string>;
 

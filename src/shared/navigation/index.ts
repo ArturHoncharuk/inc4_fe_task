@@ -3,4 +3,10 @@ import {
   TypedNativeStackScreenProps,
 } from './navigation.types';
 
-export { RootNavigationParamsType, TypedNativeStackScreenProps };
+import { RootBottomNavigation } from './root-bottom.navigation';
+
+export {
+  RootNavigationParamsType,
+  TypedNativeStackScreenProps,
+  RootBottomNavigation,
+};

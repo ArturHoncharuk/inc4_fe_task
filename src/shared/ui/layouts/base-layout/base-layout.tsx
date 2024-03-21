@@ -1,9 +1,12 @@
-import { SafeAreaView } from 'react-native';
+import { ReactNode } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { styles } from './base-layout.styles';
 
-// import { SafeAreaView } from 'react-native-safe-area-context';
+interface IBaseLayout {
+  children: ReactNode;
+}
 
-export const BaseLayout = () => {
-  return <SafeAreaView style={styles.wrapper} />;
+export const BaseLayout = ({ children }: IBaseLayout) => {
+  return <SafeAreaView style={styles.wrapper}>{children}</SafeAreaView>;
 };
