@@ -1,30 +1,29 @@
 {
   "expo": {
-    "name": "inc4-frontend",
+    "name": "HashWatcher",
     "slug": "inc4-frontend",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/shared/assets/images/app/app_icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/shared/assets/images/app/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#121212"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./src/shared/assets/images/app/app_icon.png",
+        "backgroundColor": "#faffff"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./src/shared/assets/images/app/favicon.png"
+    },
+    "plugins": ["expo-font"]
   }
 }
