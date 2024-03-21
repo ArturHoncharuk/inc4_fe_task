@@ -1,20 +1,16 @@
 import { registerRootComponent } from 'expo';
 import * as SplashScreen from 'expo-splash-screen';
+import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
-import { StyleProp, View, ViewStyle } from 'react-native';
+
+import { WithProviders } from './providers/withProviders';
 
 import { useAsyncSplash } from '@/shared/lib/hooks';
-import { BaseLayout } from '@/shared/ui/layouts/base-layout';
 import { RootBottomNavigation } from '@/shared/navigation';
-import { NavigationContainer } from '@react-navigation/native';
 
 SplashScreen.preventAutoHideAsync();
 
-const wrapperStyle: StyleProp<ViewStyle> = {
-  flex: 1,
-};
-
-export default function Entry() {
+export function Entry() {
   const { fontsLoaded, fontError, onLayoutRootView } = useAsyncSplash();
 
   useEffect(() => {
@@ -28,11 +24,10 @@ export default function Entry() {
   }
 
   return (
-    <View style={wrapperStyle} onLayout={onLayoutRootView}>
-      <NavigationContainer>
-        <RootBottomNavigation />
-      </NavigationContainer>
-    </View>
+    <WithProviders onLayoutRootView={onLayoutRootView}>
+      <StatusBar style="light" />
+      <RootBottomNavigation />
+    </WithProviders>
   );
 }
 
