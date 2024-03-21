@@ -8,5 +8,9 @@ interface IBaseLayout {
 }
 
 export const BaseLayout = ({ children }: IBaseLayout) => {
-  return <SafeAreaView style={styles.wrapper}>{children}</SafeAreaView>;
+  return (
+    <SafeAreaView edges={{ top: 'additive' }} style={styles.wrapper}>
+      {children}
+    </SafeAreaView>
+  );
 };
