@@ -4,7 +4,7 @@
     "slug": "inc4-frontend",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/shared/assets/images/app/app_icon.png",
+    "icon": "./src/shared/assets/images/app/adaptive-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./src/shared/assets/images/app/splash.png",
@@ -17,7 +17,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/shared/assets/images/app/app_icon.png",
+        "foregroundImage": "./src/shared/assets/images/app/adaptive-icon.png",
         "backgroundColor": "#faffff"
       }
     },
