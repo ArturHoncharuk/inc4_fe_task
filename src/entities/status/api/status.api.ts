@@ -1,4 +1,4 @@
-import { FetchStatusResponse } from './types';
+import type { FetchStatusResponse } from './types';
 
 import { fetcher } from '@/shared/lib/_fetcher';
 

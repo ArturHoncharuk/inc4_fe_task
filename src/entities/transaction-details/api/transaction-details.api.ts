@@ -1,4 +1,4 @@
-import { FetchTransactionDetailsResponse } from './types';
+import type { FetchTransactionDetailsResponse } from './types';
 
 import { fetcher } from '@/shared/lib/_fetcher';
 
