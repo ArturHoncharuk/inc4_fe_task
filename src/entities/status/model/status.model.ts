@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { InitialStatusState, IStatus } from './types';
+import type { InitialStatusState, IStatus } from './types';
 
 export const statusInitialState: InitialStatusState = {
   status: null,
