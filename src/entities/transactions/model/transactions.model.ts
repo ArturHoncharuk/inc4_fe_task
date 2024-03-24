@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import type { ITransaction } from './types';
-import { InitialTransactionState } from './types';
+import type { InitialTransactionState, ITransaction } from './types';
 
 export const transactionsInitialState: InitialTransactionState = {
   transactions: [],
